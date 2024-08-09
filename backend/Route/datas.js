@@ -14,8 +14,8 @@ router.get('/getFirmDetails', async (req, res) => {
     const productName = req.query.product;
 
     try {
-        const firm = await dataModel.findOne({ product: productName }, 'firmName doorNo street area city pincode mobile');
-        if (firm) {
+        const firm = await dataModel.find({ product: productName }, 'firmname doorno street area city pincode mobile product');
+        if (firm.length>0) {
             res.json(firm);
         } else {
             res.status(404).json({ message: 'Firm not found for the specified product' });

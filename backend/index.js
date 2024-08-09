@@ -16,8 +16,6 @@ mongoose.connection.on('connected', ()=>{
 
 app.use('/datas',datas)
 
-app.get
-
 app.listen(7001, ()=>{
     console.log('sever is running on port 7001')
 })
