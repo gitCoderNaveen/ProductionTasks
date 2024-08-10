@@ -29,11 +29,11 @@ function FirmDetails() {
                             <input
                                 type="text"
                                 value={product}
-                                class="form-control my-form" id="floatingInput"
+                                className="form-control my-form" id="floatingInput"
                                 onChange={(e) => setProduct(e.target.value)}
                                 placeholder="Enter product name"
                             />
-                            <label for="floatingInput">Enter Firm Name</label>
+                            <label>Enter Firm Name</label>
                         </div>
                         <button onClick={fetchFirmDetails} className='btn btn-primary btn-sm mt-2'>Get Firm Details</button>
                     </div>
@@ -45,16 +45,17 @@ function FirmDetails() {
                             {firmDetails.map((firm, index) => (
                                 <div>
                                     <ul key={index} className='list-group list-group'>
-                                        <li className='list-group-item d-flex justify-content-between align-items-start'>
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold">{firm.firmname}</div>
+                                        <li className='list-group-item litst-items d-flex justify-content-between align-items-start'>
+                                            <div className="ms-2 me-auto">
+                                                <div className="fw-bold">{firm.firmname}</div>
                                                 {firm.doorno}, {firm.street}, {firm.area}, {firm.city}, {firm.pincode}
                                             </div>
-                                            <span class="text-bg-primary rounded-pill p-2">{firm.mobile}</span>
+                                            <span className="text-bg-primary rounded-pill p-2">{firm.mobile}</span>
                                         </li>
                                     </ul>
                                 </div>))}
-                        </div>) : <p>Firm not found for this product</p>}
+                        </div>) : <p>welcome</p>
+                    }
                 </div>
             </div>
         </div>

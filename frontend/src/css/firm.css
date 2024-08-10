@@ -1,5 +1,5 @@
 .mainDiv{
-    background-image: url(../images/Industrial_background.jpg);
+    background-image: linear-gradient(to right,#d5f5e3, #82e0aa, #239b56);
     background-repeat: no-repeat;
     background-size:cover;
     width: 100%;
@@ -10,6 +10,7 @@
     align-items: center;
 }
 .cardStyle{
+    background-image: linear-gradient(to right,#566573, #2c3e50, #212f3d);
     width: 30rem;
     height: fit-content;
 }
@@ -17,57 +18,48 @@
     width: 30rem;
     text-align: center;
 }
+.my-form-div{
+    width: auto;
+}
 .productHeading{
     border-radius:10px;
+    color: #17202a;
+}
+.litst-items{
+    background-image: linear-gradient(to right,#566573, #2c3e50, #212f3d);
+    color: #fff;
 }
 
 /* -------------Mediaquery ------------- */
 
-@media screen and (max-width:980px) {
-    .mainDiv{
-        display: flex;
-        height: 150vh;
-        padding: 1rem;
-    }
-    .cardStyle{
-        width: 20rem;
+@media screen and (max-width:900px) {
+    .my-form-div{
+        width: auto;
+        text-align: center;
     }
     .my-card-body{
-        width: 20rem;
-    }
-    .outPutDiv{
-        width: 20rem;
+        text-align: center;
+        width: auto;
     }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:580px) {
     .mainDiv{
         display: grid;
-        height: 250vh;
-        padding: 1rem;
-    }
-    .cardStyle{
-        width: 20rem;
-    }
-    .my-card-body{
-        width: 20rem;
-    }
-    .outPutDiv{
-        width: 20rem;
-    }
-}
-
-@media screen and (max-width:380px) {
-    .mainDiv{
-        display: grid;
+        justify-content: center;
+        align-items: center;
         height: 200vh;
+        padding: 5px;       
     }
-    .cardStyle{
-        width: 100%;
+    .my-card{
+        width: auto;
+        text-align: center;
+    }
+    .my-form-div{
+        width: auto;
+        text-align: center;
     }
     .my-card-body{
-        width: 100%;
-    }
-    .outPutDiv{
-        width: 100%;
+        text-align: center;
+        width: auto;
     }
 }
