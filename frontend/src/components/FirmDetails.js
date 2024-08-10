@@ -8,6 +8,7 @@ function FirmDetails() {
     const [isPopup, setIsPopup] = useState(false)
 
     const fetchFirmDetails = async () => {
+        if(product!==' ')
         try {
             const response = await fetch(`http://localhost:7001/datas/getFirmDetails?product=${product}`);
             const data = await response.json();
@@ -38,7 +39,7 @@ function FirmDetails() {
                             <label>Enter Firm Name</label>
                         </div>
                         <div className='container'>
-                        <button onClick={fetchFirmDetails} className='btn btn-primary btn-sm mt-2'>Get Firm Details</button>
+                        <button type='submit' onClick={fetchFirmDetails} className='btn btn-primary btn-sm mt-2'>Get Firm Details</button>
                         {isPopup&&<button type='submit' onClick={(e)=>{setIsPopup(false)}} className='btn closeButton btn-danger btn-sm mt-2'>Exit</button>}
                         </div>
                     </div>
