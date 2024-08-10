@@ -6,13 +6,9 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors({
-    origin:['http://deploy-mern-1whq.vercel.app'],
-    methods:['POST','GET'],
-    credentials:true
-}))
+app.use(cors())
 
-mongoose.connect('mongodb+srv://naveenbscmca1518:product@2024@cluster0.cfshq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb://127.0.0.1:27017/ProductDirectory')
 
 mongoose.connection.on('connected', ()=>{
     console.log('MongoDB successfully connectd')

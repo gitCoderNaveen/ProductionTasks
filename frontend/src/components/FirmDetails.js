@@ -8,7 +8,7 @@ function FirmDetails() {
 
     const fetchFirmDetails = async () => {
         try {
-            const response = await fetch(`https://production-tasks-api.vercel.app/datas/getFirmDetails?product=${product}`);
+            const response = await fetch(`http://localhost:7001/datas/getFirmDetails?product=${product}`);
             const data = await response.json();
             if (response.ok) {
                 setFirmDetails(data);
