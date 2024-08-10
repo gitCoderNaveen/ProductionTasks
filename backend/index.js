@@ -7,7 +7,7 @@ const cors = require('cors')
 const app = express()
 
 app.use(cors({
-    origin:['https://production-tasks-frontend.vercel.app/'],
+    origin:['https://production-tasks-frontend.vercel.app'],
     methods:['POST','GET'],
     credentials:true
 }))
