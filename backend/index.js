@@ -6,9 +6,9 @@ const cors = require('cors')
 
 const app = express()
 
+const port=process.env.PORT || 7001;
 app.use(cors())
 
-mongoose.connect('mongodb://127.0.0.1:27017/ProductDirectory')
 
 mongoose.connection.on('connected', ()=>{
     console.log('MongoDB successfully connectd')
