@@ -5,6 +5,7 @@ import '../css/firm.css'
 function FirmDetails() {
     const [product, setProduct] = useState('');
     const [firmDetails, setFirmDetails] = useState([]);
+    const [isPopup, setIsPopup] = useState(false)
 
     const fetchFirmDetails = async () => {
         try {
@@ -18,6 +19,7 @@ function FirmDetails() {
         } catch (error) {
             console.error('Error fetching firm details:', error);
         }
+        setIsPopup(true)
     };
 
     return (
@@ -35,10 +37,13 @@ function FirmDetails() {
                             />
                             <label>Enter Firm Name</label>
                         </div>
+                        <div className='container'>
                         <button onClick={fetchFirmDetails} className='btn btn-primary btn-sm mt-2'>Get Firm Details</button>
+                        {isPopup&&<button type='submit' onClick={(e)=>{setIsPopup(false)}} className='btn closeButton btn-danger btn-sm mt-2'>Exit</button>}
+                        </div>
                     </div>
                 </div>
-                <div className='outPutDiv'>
+                {isPopup && <div className='outPutDiv'>
                     {firmDetails.sort().length > 0 ? (
                         <div>
                             <h2 className='bg-success p-2 productHeading'>{product}</h2>
@@ -54,9 +59,9 @@ function FirmDetails() {
                                         </li>
                                     </ul>
                                 </div>))}
-                        </div>) : <p>welcome</p>
+                        </div>) : <p></p>
                     }
-                </div>
+                </div>}
             </div>
         </div>
     );
